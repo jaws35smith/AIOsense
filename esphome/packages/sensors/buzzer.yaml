@@ -16,6 +16,7 @@ api:
 
 rtttl:
   output: rtttl_out
+  gain: 0.8
   on_finished_playback:
     - logger.log: 'Song ended!'
 
