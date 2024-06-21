@@ -4,7 +4,6 @@ output:
   - platform: ledc
     pin: "${buzzer_pin}"
     id: rtttl_out
-    gain: 50%
 
 api:
   services:
@@ -17,7 +16,7 @@ api:
 
 rtttl:
   output: rtttl_out
-  gain: 50%
+  gain: 25%
   on_finished_playback:
     - logger.log: 'Song ended!'
 
