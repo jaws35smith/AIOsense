@@ -24,4 +24,4 @@ esphome:
   on_boot:
     - priority: 10
       then:
-        - rtttl.play: "two short:d=4,o=5,b=100:16e6,16e6"
+        - rtttl.play: "long:d=1,o=5,b=100:e6"
