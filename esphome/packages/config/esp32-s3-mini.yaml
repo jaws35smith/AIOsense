@@ -7,8 +7,8 @@ substitutions:
   rgb_led_pin: GPIO47
   rgb_led_type: RGB
   sen0395_io_pin: GPIO4
-  uart_rx_pin: GPIO44
-  uart_tx_pin: GPIO43
+  uart_rx_pin: GPIO43
+  uart_tx_pin: GPIO44
 
 esp32:
   board: esp32-s3-devkitc-1
