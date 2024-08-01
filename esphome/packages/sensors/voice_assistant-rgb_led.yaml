@@ -1,10 +1,13 @@
 i2s_audio:
-  i2s_lrclk_pin: "${i2s_lrclk_pin}"  # WS
-  i2s_bclk_pin: "${i2s_bclk_pin}"  # SCK
+  - id: i2s_in
+    i2s_lrclk_pin: "${i2s_lrclk_pin}"  # WS
+    i2s_bclk_pin: "${i2s_bclk_pin}"  # SCK
 
-speaker:
+media_player:
   - platform: i2s_audio
-    id: speaker_i2s
+    name: "esp_speaker"
+    id: media_player_speaker
+    i2s_audio_id: i2s_in
     dac_type: external
     i2s_dout_pin: ${i2s_dout_pin}
     mode: mono
@@ -16,14 +19,12 @@ microphone:
     adc_type: external
     i2s_din_pin: "${i2s_din_pin}"  # SD
     pdm: false
+    i2s_audio_id: i2s_in
 
 voice_assistant:
   id: va
   microphone: mic_i2s
-  speaker: speaker_i2s
-  noise_suppression_level: 2
-  auto_gain: 31dBFS
-  volume_multiplier: 2.0
+  media_player: media_player_speaker
   on_listening:
     - light.turn_on:
         id: led
