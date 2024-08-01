@@ -1,7 +1,7 @@
 i2s_audio:
   - id: i2s_in
-    i2s_lrclk_pin: "${i2s_lrclk_pin}"  # WS
-    i2s_bclk_pin: "${i2s_bclk_pin}"  # SCK
+    i2s_lrclk_pin: GPIO34  # WS
+    i2s_bclk_pin: GPIO38  # SCK
 
 media_player:
   - platform: i2s_audio
@@ -9,7 +9,7 @@ media_player:
     id: media_player_speaker
     i2s_audio_id: i2s_in
     dac_type: external
-    i2s_dout_pin: ${i2s_dout_pin}
+    i2s_dout_pin: GPIO33
     mode: mono
 
 microphone:
@@ -17,7 +17,7 @@ microphone:
     id: mic_i2s
     channel: left
     adc_type: external
-    i2s_din_pin: "${i2s_din_pin}"  # SD
+    i2s_din_pin: GPIO37  # SD
     pdm: false
     i2s_audio_id: i2s_in
 
